@@ -21,22 +21,9 @@ while is_on:
         else:
             print('Invalid selection. Please choose espresso, latte, or cappuccino.')
 =======
-# from turtle import Turtle, Screen
-# tim = Turtle()
-# tim.color('blue')
-# tim.shape('turtle')
-# print(tim)
-# tim.forward(100)
-# my_screen = Screen()
-# print(my_screen.canvheight)
-# my_screen.exitonclick()
 
-# from prettytable import PrettyTable
-# t = PrettyTable()
-# t.add_column('name',['mewtwo','pikachu','charmander'])
-# t.add_column('type',['psychic','fire','electric'])
-# t.align='l'
-# print(t)
+
+##USING OOPS CONCEPTS
 
 from coffee_maker import CoffeeMaker
 from menu import Menu
@@ -60,4 +47,4 @@ while is_on:
         print(drink)
         if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
             coffee_maker.make_coffee(drink)
->>>>>>> e2184ab (Refactor to OOP: add Engine and Controller classes; update main flow)
+
