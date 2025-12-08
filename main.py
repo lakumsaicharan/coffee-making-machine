@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from data import Menu, resources
 from functions import make_coffee, transaction_successful, resource_sufficient, process_coins, report
 is_on = True
@@ -19,3 +20,44 @@ while is_on:
                     continue
         else:
             print('Invalid selection. Please choose espresso, latte, or cappuccino.')
+=======
+# from turtle import Turtle, Screen
+# tim = Turtle()
+# tim.color('blue')
+# tim.shape('turtle')
+# print(tim)
+# tim.forward(100)
+# my_screen = Screen()
+# print(my_screen.canvheight)
+# my_screen.exitonclick()
+
+# from prettytable import PrettyTable
+# t = PrettyTable()
+# t.add_column('name',['mewtwo','pikachu','charmander'])
+# t.add_column('type',['psychic','fire','electric'])
+# t.align='l'
+# print(t)
+
+from coffee_maker import CoffeeMaker
+from menu import Menu
+from money_machine import MoneyMachine
+
+money_machine = MoneyMachine()
+coffee_maker = CoffeeMaker()
+menu = Menu()
+
+is_on = True
+while is_on:
+    options = menu.get_items()
+    choice = input(f'What would you like? {options}: ').lower()
+    if choice == 'off':
+        is_on = False
+    elif choice == 'report':
+        coffee_maker.report()
+        money_machine.report()
+    else:
+        drink = menu.find_drink(choice)
+        print(drink)
+        if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
+            coffee_maker.make_coffee(drink)
+>>>>>>> e2184ab (Refactor to OOP: add Engine and Controller classes; update main flow)
